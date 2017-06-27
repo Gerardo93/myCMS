@@ -59,9 +59,11 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>Gestor de contenidos</h1>
+            <h1>Metal Slug Attack</h1>
             <p>
-                Contenidos...
+                Metal Slug Attack (Japanese: メタルスラッグアタック - Metaru Suraggu Atakku[1]) is a tower defense game created by SNK Playmore for iOS and Android mobile devices. It was originally announced by SNK Playmore in November 2015, and then officially released for Android and iOS on 14 February 2016[2][3]. The game itself is a sequel to Metal Slug Defense, featuring numerous improvements and brand new game modes.
+                The official time zone is GMT+9. [add other time standards' equivalents]
+                Join the MSA Facebook Group!
             </p>
         </div>
     </div>
@@ -80,6 +82,21 @@
                             </div>
                             <div class="panel-body">
                                 No hay entradas que mostrar...
+                                <ul>
+                                    {{#each entradas}}
+                                        <li>
+                                            {{title}} (Autor: {{author_id}}) No. Comentarios: {{coments_num}}
+                                            <ol>
+                                                {{#each comentarios _id}}
+                                                    <li>
+                                                        {{author_id}}): {{title}}
+                                                    </li>
+                                                {{/each}}
+                                            </ol>
+                                            <br>
+                                        </li>
+                                    {{/each}}
+                                </ul>
                             </div>
                         </div>
                     </div>

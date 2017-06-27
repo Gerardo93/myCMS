@@ -12,3 +12,12 @@ Template.topBar.events({
         Modal.show('logout');
     }
 });
+
+Template.content.helpers({
+    entradas:function () {
+        return Entradas.find({});
+    },
+    comentarios:function (_id) {
+        return Comentarios.find({entrada_id:_id});
+    }
+});
