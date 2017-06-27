@@ -1,25 +1,126 @@
 <head>
-  <title>myCMS</title>
+  <title>CMS</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+    {{> topBar}}
+    {{> content}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="topBar">
+    <div class="container-fluid topbar">
+        <div class="text-center logo">
+            <h1>CMS</h1>
+        </div>
+
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                            Entradas</a></li>
+                        <li><a href="#"><span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
+                            Favoritos</a></li>
+                        <li><a href="#"><span class="fa fa-users" aria-hidden="true"></span>
+                            Autores</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {{#if Meteor.currentuser}}
+                        <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </a></li>
+                        {{/if}}
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                            Inicio Sesión</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Registro</a></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Gestor de contenidos</h1>
+            <p>
+                Contenidos...
+            </p>
+        </div>
+    </div>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                Ultimas entradas
+                            </div>
+                            <div class="panel-body">
+                                No hay entradas que mostrar...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-search" aria-hidden="true"></span>
+                                    Busqueda
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="field_buscar" value="" class="form-control" placeholder="¿Qué buscas?">
+                                            <span class="input-group-btn">
+                                                <button class="form-control btn-search" name="btn_buscar" type="button" title="Buscar">
+                                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-filter" aria-hidden="true"></span>
+                                    Filtro
+                                </div>
+                                <div class="panel-body">
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                                    Archivo
+                                </div>
+                                <div class="panel-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

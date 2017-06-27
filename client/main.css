@@ -1,1 +1,35 @@
 /* CSS declarations go here */
+body{
+    background-image: url(illusion.png);
+    font-family: 'Roboto', sans-serif;
+}
+
+.topbar{
+    background: #333;
+    color: #99c00f;
+}
+
+.navbar{
+    background-color: #333;
+    margin-bottom: 0px;
+}
+
+.navbar .nav >li >a{
+    color: white;
+}
+
+.navbar li a:hover, .navbar li a:active{
+    color: #99c00f !important;
+}
+
+.jumbotron{
+    color: white;
+    text-align: center;
+    background-image: url("https://lh3.googleusercontent.com/WCRwHKi00kgXe050zYOGXp8bHthxo_udGSbawo_SRflWKSkdRWo8tMxAP0GEB_FE=h556");
+    background-attachment: fixed;
+}
+
+.panel-heading, .btn-search{
+    background-color: darkgreen !important;
+    color: white !important;
+}
