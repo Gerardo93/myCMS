@@ -1,5 +1,5 @@
 <head>
-  <title>CMS</title>
+  <title>Metal Slug Attack</title>
 </head>
 
 <body>
@@ -10,7 +10,7 @@
 <template name="topBar">
     <div class="container-fluid topbar">
         <div class="text-center logo">
-            <h1>CMS</h1>
+            <h1>MSA</h1>
         </div>
 
         <nav class="navbar navbar-default navbar-static-top">
@@ -38,13 +38,19 @@
                     <ul class="nav navbar-nav navbar-right">
                         {{#if Meteor.currentuser}}
                         <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            {{ currentUser.username }}
+                        </a></li>
+                        <li><a href="#" data-toggle="modal" id="logout"><span class="fa fa-sign-out" aria-hidden="true"></span>
+                            Cerrar Sesión
+                        </a></li>
+                        {{else}}
+                        <li><a href="#" data-toggle="modal" id="login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                            Inicio Sesión
+                        </a></li>
+                        <li><a href="#" data-toggle="modal" id="register"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                            Registro
                         </a></li>
                         {{/if}}
-                        <li><a href="#"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                            Inicio Sesión</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                            Registro</a></li>
-
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
