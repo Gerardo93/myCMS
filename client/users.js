@@ -1,5 +1,5 @@
 Modal.allowMultiple=true;
-var validador=$.validator;
+let validador = $.validator;
 
 validador.setDefaults({
     rules:{
@@ -75,6 +75,40 @@ Template.register.events({
         event.preventDefault();
         Modal.hide(template);
         Modal.show('login');
+    },
+    "submit #register-form":function (event, template) {
+        const user=template.find("#regnombre").value,
+            email=template.find("#regemail").value,
+            pass1=template.find("#regpass1").value,
+            pass2=template.find("#regpass2").value;
+        const userObject={
+            username:user,
+            email:email,
+            password:pass1
+        };
+        Accounts.createUser(userObject, function (err) {
+            if(err){
+                console.log(err.reason);
+                //username ya existe
+                if(err.reason === "Username already exists."){
+                    validator.showErrors({
+                        regnombre: "Ya existe un usuario con ese nombre."
+                    });
+                }
+                //email ya existe
+                if(err.reason === "Email already exists."){
+                    validator.showErrors({
+                        regemail: "Ya existe un usuario con ese email."
+                    });
+                }
+            }
+            else{
+                console.log(Meteor.user());
+                Modal.hide(template);
+            }
+        });
+        console.log('submit-form'+user+email+pass1+pass2);
+        return false;
     }
 });
 
@@ -83,5 +117,39 @@ Template.login.events({
         event.preventDefault();
         Modal.hide(template);
         Modal.show('register');
+    },
+    "submit #login-form":function (event, template) {
+        const user=template.find("#lognombre").value,
+            pass=template.find("#logpass").value;
+        Meteor.loginWithPassword(user,pass,function (err) {
+            if(err){
+                console.log(err.reason);
+                //username erroneo
+                if(err.reason === "User not found"){
+                    validator.showErrors({
+                        lognombre: "El usuario es incorrecto."
+                    });
+                }
+                //pass erroneo
+                if(err.reason === "Incorrect password"){
+                    validator.showErrors({
+                        logpass: "La contraseña es incorrecta."
+                    });
+                }
+            }
+            else{
+                console.log(Meteor.user());
+                Modal.hide(template);
+            }
+        });
+        return false;
+    }
+});
+
+Template.logout.events({
+    "submit #logout-form":function (event, template) {
+        Meteor.logout(function (err) {
+            console.log(err.reason);
+        });
     }
 });
