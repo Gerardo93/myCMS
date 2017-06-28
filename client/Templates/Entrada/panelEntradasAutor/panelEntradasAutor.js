@@ -1,5 +1,5 @@
 Template.panelEntradasAutor.onCreated(function () {
-    this.subscribe("EntradasAutor", Router.current().params._name);
+    this.subscribe("EntradasAutor", Router.current().params._id);
 });
 
 Template.panelEntradasAutor.helpers({
