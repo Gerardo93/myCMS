@@ -1,0 +1,18 @@
+<template name="panelEntradasAutor">
+    {{#if Template.subscriptionsReady}}
+        <div class="list-group margintopbottom30">
+            <a href="#" class="list-group-item active no-border center">Otras entradas de este autor</a>
+            {{#if entradasComentadasCount Entradas.author_id Entradas._id}}
+                <ul class="no-padding-left">
+                    {{#each entradasPorAutor Entradas.author_id Entradas._id}}
+                        <li>
+                            <a class="list-group-item" href="/entrada/{{_id}}">{{title}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <span class="list-group-item" style="color:#000;">No hay más entradas de este autor.</span>
+            {{/if}}
+        </div>
+    {{/if}}
+</template>

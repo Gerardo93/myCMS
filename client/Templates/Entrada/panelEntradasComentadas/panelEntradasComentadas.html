@@ -1,0 +1,18 @@
+<template name="panelEntradasComentadas">
+    {{#if Template.subscriptionsReady}}
+        <div class="list-group margintopbottom30">
+            <a href="#" class="list-group-item active no-border center">Entradas mas comentadas</a>
+            {{#if entradasComentadasCount}}
+            <ul class="no-padding-left">
+                {{#each entradasComentadas}}
+                    <li>
+                        <a class="list-group-item" href="/entrada/{{_id}}">{{incremented @index}}.-{{title}} ({{coments_num}}) comentarios</a>
+                    </li>
+                {{/each}}
+            </ul>
+            {{else}}
+                <span class="list-group-item" style="color:#000;">No hay más entradas...</span>
+            {{/if}}
+        </div>
+    {{/if}}
+</template>

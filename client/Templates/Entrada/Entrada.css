@@ -22,6 +22,21 @@
     border-bottom: 1px solid #ccc;
 }
 
+.comments-registered{
+    font-size: 14px;
+    font-style: italic;
+    padding: 8px 0px;
+    margin-bottom: 20px;
+}
+
 .active{
     background-color: #99c00f !important;
+}
+
+.list-group li{
+    list-style-type: none;
+}
+
+.no-padding-left{
+    padding-left: 0px;
 }

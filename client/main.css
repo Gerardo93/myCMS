@@ -1,4 +1,9 @@
 /* CSS declarations go here */
+html{
+    position: relative;
+    min-height: 100%;
+}
+
 body{
     background-image: url(illusion.png);
     font-family: 'Roboto', sans-serif;
@@ -45,4 +50,12 @@ body{
 .margintopbottom30{
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+a{
+    color: #99c00f;
+}
+
+a:hover{
+    color: #99c00f;
 }
