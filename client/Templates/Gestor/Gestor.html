@@ -16,7 +16,7 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="#">Entrada</a></li>
+                            <li><a href="#" type="button" data-toggle="modal" data-target="#myModal">Entrada</a></li>
                         </ul>
                     </div>
                 </div>
@@ -135,4 +135,49 @@
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Nueva entrada
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" id="register-form" method="post">
+                                <div class="form-group">
+                                    <label>Titulo entrada</label>
+                                    <input type="text" class="form-control" name="regtitulo" placeholder="Titulo" id="regtitulo" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Contenido</label>
+                                    <textarea class="form-control" name="regcontenido" placeholder="Contenido" id="regcontenido" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Etiquetas</label>
+                                    <input type="text" class="form-control" name="regtags" placeholder="Añade algunas etiquetas." id="regtags" required>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" value="publica">Publicar</label>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" id="crear-entrada" class="btn btn-default btn-primary">Guardar</button>
+                                    <button type="reset" class="btn btn-default btn-primary" name="limpiar">Limpiar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

@@ -1,6 +1,6 @@
 <template name="navigation">
     <ul class="nav navbar-nav">
-        <li><a href="#"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <li><a href="/"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
             Entradas</a></li>
         <li><a href="#"><span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
             Favoritos</a></li>
@@ -11,6 +11,9 @@
         {{#if currentUser}}
             <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
                 {{ currentUser.username }}
+            </a></li>
+            <li><a href="/gestor"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                Gestor
             </a></li>
             <li><a href="#" data-toggle="modal" id="logout"><span class="fa fa-sign-out" aria-hidden="true"></span>
                 Cerrar Sesión

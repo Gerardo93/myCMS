@@ -23,7 +23,7 @@ body{
     color: white;
 }
 
-.navbar li a:hover, .navbar li a:active{
+.navbar li a:hover, .navbar li a:active, .navbar li a:focus{
     color: #99c00f !important;
 }
 
