@@ -1,6 +1,3 @@
-Meteor.subscribe('Entradas');
-Meteor.subscribe('Comentarios');
-
 Template.topBar.events({
     "click a#register":function (event, template) {
         event.preventDefault();

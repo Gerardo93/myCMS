@@ -5,3 +5,11 @@ Meteor.publish('Entradas', function () {
 Meteor.publish('Comentarios', function () {
     return Comentarios.find();
 });
+
+Meteor.publish("EntradasByID", function (id) {
+    return Entradas.find({_id:id});
+});
+
+Meteor.publish("ComentariosByEntrada", function (id) {
+    return Comentarios.find({entrada_id:id});
+});
