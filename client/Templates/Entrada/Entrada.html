@@ -1,5 +1,74 @@
 <template name="Entrada">
-    <div id="entrada" class="container">
-        {{title}}
+    <div class="container color">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
+                <div class="row">
+                    <h1>{{Entradas.title}}</h1>
+                    <p>
+                        <h4>
+                            Enviado por
+                            <a href="#">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                {{Entradas.author_id}}
+                            </a>
+                            el {{createdAtE Entradas.createdAt}}
+                        </h4>
+                    </p>
+                    <article class="readable text-justify">{{textoE Entradas.text}}</article>
+                    <br>
+                    <h4>Escribe tu opinión sobre el tema:</h4>
+                    <form role="form" method="post">
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" id="coment"></textarea>
+                            <input type="submit" class="btn btn-default btn-primary" value="Enviar">
+                        </div>
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="comments-header"><i class="fa fa-comment"></i> {{comentariosE Entradas.coments_num}}</div>
+                    <ul class="media-list">
+                        {{#each Comentarios}}
+                            <li class="media marginb30">
+                                <div class="media-left">
+                                    <small><i>{{createdAtE createdAt}}</i></small>
+                                </div>
+                                <div class="media-body">
+                                    <article class="readable text-justify">{{textoE text}}</article>
+                                    <div class="pull-right">
+                                        <h5>
+                                            Enviado por
+                                            <a href="#">
+                                                <i class="fa fa-user" aria-hidden="true"></i>
+                                                {{author_id}}
+                                            </a>
+                                        </h5>
+                                    </div>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-sm hidden-md col-lg-4">
+                <div class="list-group margintopbottom30">
+                    <a href="#" class="list-group-item active no-border center">Entradas mas comentadas</a>
+                    <a href="#" class="list-group-item">1.-2893712iuqweiuwqio(12)</a>
+                    <a href="#" class="list-group-item">2.-2893712iuqweiuwqio(10)</a>
+                    <a href="#" class="list-group-item">3.-2893712iuqweiuwqio(9)</a>
+                    <a href="#" class="list-group-item">4.-2893712iuqweiuwqio(8)</a>
+                    <a href="#" class="list-group-item">5.-2893712iuqweiuwqio(7)</a>
+                </div>
+                <div class="list-group margintopbottom30">
+                    <a href="#" class="list-group-item active no-border center">Otras entradas de este autor</a>
+                    <a href="#" class="list-group-item">2893712iuqweiuwqio</a>
+                    <a href="#" class="list-group-item">2893712iuqweiuwqio</a>
+                </div>
+                <div class="list-group margintopbottom30">
+                    <a href="#" class="list-group-item active no-border center">Un poco de todo</a>
+                    <a href="#" class="list-group-item">2893712iuqweiuwqio</a>
+                    <a href="#" class="list-group-item">2893712iuqweiuwqio</a>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

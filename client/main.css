@@ -33,3 +33,16 @@ body{
     background-color: darkgreen !important;
     color: white !important;
 }
+
+.no-border{
+    border:0;
+}
+
+.center{
+    text-align: center;
+}
+
+.margintopbottom30{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

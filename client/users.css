@@ -7,6 +7,7 @@
 .btn-default{
     background-color: #99c00f !important;
     color: white !important;
+    border:0;
 }
 
 input.error{
