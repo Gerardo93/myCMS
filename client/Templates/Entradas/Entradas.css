@@ -1,0 +1,9 @@
+.not-link{
+    text-decoration: none !important;
+    color: white;
+}
+
+.not-link:hover{
+    text-decoration: none !important;
+    color: white;
+}

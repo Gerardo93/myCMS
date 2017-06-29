@@ -1,25 +1,84 @@
-<head>
-  <title>myCMS</title>
-</head>
-
-<body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
-</body>
-
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="layoutTemplate">
+    {{> topBar}}
+    {{> yield}}
+    {{> footer}}
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="content">
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Metal Slug Attack</h1>
+            <p>
+                Metal Slug Attack (Japanese: メタルスラッグアタック - Metaru Suraggu Atakku[1]) is a tower defense game created by SNK Playmore for iOS and Android mobile devices. It was originally announced by SNK Playmore in November 2015, and then officially released for Android and iOS on 14 February 2016[2][3]. The game itself is a sequel to Metal Slug Defense, featuring numerous improvements and brand new game modes.
+                The official time zone is GMT+9. [add other time standards' equivalents]
+                Join the MSA Facebook Group!
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="fa fa-clock-o" aria-hidden="true"></span>
+                                Ultimas entradas
+                            </div>
+                            <div class="panel-body">
+                                No hay entradas que mostrar...
+                                <ul>
+                                    {{#each entradas}}
+                                        {{> entrada}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-search" aria-hidden="true"></span>
+                                    Busqueda
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="search" name="field_buscar" value="" class="form-control" placeholder="¿Qué buscas?">
+                                            <span class="input-group-btn">
+                                                <button class="form-control btn-search" name="btn_buscar" type="button" title="Buscar">
+                                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-filter" aria-hidden="true"></span>
+                                    Filtro
+                                </div>
+                                <div class="panel-body">
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <span class="fa fa-calendar" aria-hidden="true"></span>
+                                    Archivo
+                                </div>
+                                <div class="panel-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>

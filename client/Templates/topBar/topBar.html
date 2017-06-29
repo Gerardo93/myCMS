@@ -1,0 +1,57 @@
+<template name="navigation">
+    <ul class="nav navbar-nav">
+        <li><a href="/"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+            Entradas</a></li>
+        <li><a href="#"><span class="fa fa-thumbs-o-up" aria-hidden="true"></span>
+            Favoritos</a></li>
+        <li><a href="#"><span class="fa fa-users" aria-hidden="true"></span>
+            Autores</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {{#if currentUser}}
+            <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                {{ currentUser.username }}
+            </a></li>
+            <li><a href="/gestor"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                Gestor
+            </a></li>
+            <li><a href="#" data-toggle="modal" id="logout"><span class="fa fa-sign-out" aria-hidden="true"></span>
+                Cerrar Sesión
+            </a></li>
+        {{else}}
+            <li><a href="#" data-toggle="modal" id="login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                Inicio Sesión
+            </a></li>
+            <li><a href="#" data-toggle="modal" id="register"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Registro
+            </a></li>
+        {{/if}}
+    </ul>
+</template>
+
+<template name="topBar">
+    <div class="container-fluid topbar">
+        <div class="text-center logo">
+            <a href="/" class="not-link-logo"><h1>MSA</h1></a>
+        </div>
+
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    {{> navigation}}
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+</template>
